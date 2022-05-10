@@ -5,41 +5,79 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 html nav,
 body nav {
-  color: #133a75;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 80%;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fdfdfe;
+  height: 3em;
+}
+
+@media (min-width: 500px) {
+  html nav,
+  body nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+html nav .home-option,
+body nav .home-option {
+  all: unset;
+  cursor: pointer;
+  color: #fdfdfe;
+  background-color: #133a75;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.7em;
+  margin: 1%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+html nav .home-option:hover,
+body nav .home-option:hover {
+  -webkit-box-shadow: inset 5.5em 0 0.5em 0 #fdfdfe;
+          box-shadow: inset 5.5em 0 0.5em 0 #fdfdfe;
+  color: #133a75;
+}
+
+html nav .menu,
+body nav .menu {
+  color: #133a75;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100%;
   width: 100%;
-  height: 3em;
-  position: fixed;
-  z-index: 5;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  opacity: 80%;
   font-weight: 600;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-@media (min-width: 500px) {
-  html nav,
-  body nav {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-  }
-}
-
-html nav a,
-body nav a {
+html nav .menu a,
+body nav .menu a {
   all: unset;
   cursor: pointer;
   height: 100%;
@@ -51,12 +89,12 @@ body nav a {
           align-items: center;
   padding: 0 1%;
   margin: 0 1%;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-html nav a:hover,
-body nav a:hover {
+html nav .menu a:hover,
+body nav .menu a:hover {
   -webkit-box-shadow: inset 6.5em 0 0 0 #133a75;
           box-shadow: inset 6.5em 0 0 0 #133a75;
   color: #fdfdfe;
@@ -305,7 +343,7 @@ body .aboutMe-page .container div img:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 1em;
+    padding: 1em 0;
     gap: 0;
   }
   html .aboutMe-page p,
@@ -404,7 +442,7 @@ body .skills-page span {
 
 html .skills-page .codes-container,
 body .skills-page .codes-container {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: -ms-grid;
   display: grid;
@@ -697,7 +735,7 @@ body .projects-page footer img:hover {
 html .contact-page,
 body .contact-page {
   all: unset;
-  height: 100%;
+  height: 20%;
   background-color: #fdfdfe;
   color: #133a75;
   display: -webkit-box;
@@ -713,30 +751,14 @@ body .contact-page {
 html .contact-page h3,
 body .contact-page h3 {
   all: unset;
-  margin-top: 7%;
+  margin-top: 2%;
   text-align: center;
   font-size: 44px;
   font-weight: 900;
 }
 
-html .contact-page .container,
-body .contact-page .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 5%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: 2em;
-}
-
-html .contact-page .container form,
-body .contact-page .container form {
+html .contact-page footer,
+body .contact-page footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -744,47 +766,13 @@ body .contact-page .container form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 90%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-html .contact-page .container form input,
-body .contact-page .container form input {
-  resize: vertical;
-  background-color: #133a75;
-  color: #fdfdfe;
-  padding: 0.5em;
-  border-radius: 0.5em;
-  font-size: 16px;
-}
-
-html .contact-page .container form textarea,
-body .contact-page .container form textarea {
-  all: unset;
-  background-color: #133a75;
-  color: #fdfdfe;
-  padding: 0.5em;
-  border: solid 1px black;
-  height: 20em;
-  border-radius: 0.5em;
-}
-
-html .contact-page .container form label,
-body .contact-page .container form label {
-  font-size: 22px;
-  font-weight: 500;
-}
-
-html .contact-page .container form .submit,
-body .contact-page .container form .submit {
-  cursor: pointer;
-  margin: 1em;
-  width: 10em;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-html .contact-page .category,
-body .contact-page .category {
+html .contact-page footer .category,
+body .contact-page footer .category {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -795,34 +783,29 @@ body .contact-page .category {
   padding-bottom: 2em;
 }
 
-html .contact-page .category h5,
-body .contact-page .category h5 {
+html .contact-page footer .category h5,
+body .contact-page footer .category h5 {
   all: unset;
   font-size: 22px;
   font-weight: 500;
   padding: 1em 0;
 }
 
-html .contact-page .category span,
-body .contact-page .category span {
+html .contact-page footer .category span,
+body .contact-page footer .category span {
   font-size: 16px;
 }
 
 @media (min-width: 500px) {
-  html .contact-page .container,
-  body .contact-page .container {
-    padding-left: 0;
+  html .contact-page footer,
+  body .contact-page footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  html .contact-page .container form,
-  body .contact-page .container form {
-    width: 40%;
-  }
-  html .contact-page .category,
-  body .contact-page .category {
+  html .contact-page footer .category,
+  body .contact-page footer .category {
     padding-bottom: 0;
   }
 }
