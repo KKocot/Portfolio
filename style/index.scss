@@ -62,8 +62,9 @@ body {
     }
   }
   .home-page {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
+
     background-color: $white;
     background-repeat: no-repeat;
     color: $navy-blue;
@@ -135,7 +136,7 @@ body {
     }
   }
   .aboutMe-page {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background-color: $navy-blue;
     color: $white;
@@ -235,7 +236,7 @@ body {
     }
   }
   .skills-page {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background-color: $white;
     color: $navy-blue;
@@ -314,7 +315,7 @@ body {
     }
   }
   .projects-page {
-    height: 100%;
+    min-height: 100%;
     background-color: $navy-blue;
     color: $white;
     display: flex;
@@ -380,9 +381,14 @@ body {
     }
     footer {
       display: flex;
-      margin-right: 8em;
+      margin-right: 1em;
+      margin-bottom: 1em;
       gap: 3em;
       align-self: flex-end;
+      @media (min-width: 500px) {
+        margin-right: 8em;
+        margin-bottom: 2em;
+      }
       img {
         height: 5em;
         cursor: pointer;
