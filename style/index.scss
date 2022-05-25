@@ -198,7 +198,7 @@ body {
       gap: 0;
       p {
         width: 40%;
-        padding: 0;
+        padding: 1em;
       }
       .container {
         justify-content: space-around;
@@ -321,6 +321,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8em;
+    align-items: center;
     a,
     div {
       all: unset;
@@ -333,11 +334,7 @@ body {
       padding-top: 3em;
       height: 40%;
       width: 60%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      grid-column-gap: 3em;
-      grid-row-gap: 10%;
+      display: flex;
       margin: 5%;
       .project_title {
         display: flex;
@@ -416,9 +413,15 @@ body {
       }
     }
     @media (min-width: 500px) {
+      align-items: flex-start;
       padding-top: 0;
       gap: 5em;
       .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 3em;
+        grid-row-gap: 10%;
         grid-column-gap: 0;
         img {
           height: 7em;

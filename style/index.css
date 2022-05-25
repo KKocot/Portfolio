@@ -349,7 +349,7 @@ body .aboutMe-page .container div img:hover {
   html .aboutMe-page p,
   body .aboutMe-page p {
     width: 40%;
-    padding: 0;
+    padding: 1em;
   }
   html .aboutMe-page .container,
   body .aboutMe-page .container {
@@ -567,6 +567,9 @@ body .projects-page {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 8em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 html .projects-page a,
@@ -592,14 +595,9 @@ body .projects-page .container {
   padding-top: 3em;
   height: 40%;
   width: 60%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 3em;
-  grid-row-gap: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 5%;
 }
 
@@ -753,11 +751,22 @@ body .projects-page footer img:hover {
 @media (min-width: 500px) {
   html .projects-page,
   body .projects-page {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding-top: 0;
     gap: 5em;
   }
   html .projects-page .container,
   body .projects-page .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 3em;
+    grid-row-gap: 10%;
     grid-column-gap: 0;
   }
   html .projects-page .container img,
